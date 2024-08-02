@@ -1,0 +1,97 @@
+<section>
+    <ul>
+        <li class="list active" data-filter="all">Todas as imagens</li>
+        <li class="list" data-filter="mobile">Devcamp</li>
+        <li class="list" data-filter="camara">Angola Cable</li>
+        <li class="list" data-filter="watch">Host2 Africa</li>
+        <li class="list" data-filter="shoe">Fluxodigital</li>
+        <li class="list" data-filter="headephone">FULL CYCLE COMMUNITY</li>
+    </ul>
+    <div class="produtos">
+        <div class="itembox" data-itme="mobile"><img src="dev/de1 (1).jpg" alt=""></div>
+        <div class="itembox" data-itme="camara"><img src="dev/de1 (2).jpg" alt=""></div>
+        <div class="itembox" data-itme="watch"><img src="dev/de1 (17).jpg" alt=""></div>
+        <div class="itembox" data-itme="shoe"><img src="dev/de1 (4).jpg" alt=""></div>
+        <div class="itembox" data-itme="headephone"><img src="dev/de1 (5).jpg" alt=""></div>
+
+        <div class="itembox" data-itme="mobile"><img src="dev/de1 (15).jpg" alt=""></div>
+        <div class="itembox" data-itme="camara"><img src="dev/de1 (7).jpg" alt=""></div>
+        <div class="itembox" data-itme="watch"><img src="dev/de1 (16).jpg" alt=""></div>
+        <div class="itembox" data-itme="mobile"><img src="dev/de1 (9).jpg" alt=""></div>
+        <div class="itembox" data-itme="headephone"><img src="dev/de1 (10).jpg" alt=""></div>
+
+        <div class="itembox" data-itme="mobile"><img src="dev/de1 (11).jpg" alt=""></div>
+        <div class="itembox" data-itme="camara"><img src="dev/de1 (12).jpg" alt=""></div>
+        <div class="itembox" data-itme="watch"><img src="dev/de1 (13).jpg" alt=""></div>
+
+        <div class="itembox" data-itme="mobile"><img src="dev/de1 (14).jpg" alt=""></div>
+       
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    let list = document.querySelectorAll('.list');
+    let itembox = document.querySelectorAll('.itembox');
+    
+    for(let i = 0; i<list.length; i++){
+        list[i].addEventListener('click', function(){
+            for(let h = 0; h<list.length; h++){
+                list[h].classList.remove('active');
+            }
+            this.classList.add('active');
+
+            let dataFilter = this.getAttribute('data-filter');
+            
+            for(let k = 0; k<itembox.length; k++){
+                itembox[k].classList.remove('active');
+                itembox[k].classList.add('hide');
+
+                if(itembox[k].getAttribute('data-itme') == dataFilter ||
+                dataFilter == 'all'){
+                    itembox[k].classList.remove('hide');
+                    itembox[k].classList.add('active');
+                }
+            }
+        })
+    }
+</script>
